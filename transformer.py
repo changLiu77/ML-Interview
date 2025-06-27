@@ -13,7 +13,6 @@ class attention(nn.Module):
         self.W_K = nn.Linear(embed_size, embed_size) 
         self.W_V = nn.Linear(embed_size, embed_size) 
         self.W_O = nn.Linear(embed_size, embed_size)
-        
     def forward(self, x): 
         # (B, L, E) -> <B, N, L, E/N> 
         Q = self.W_Q(x).view(x.shape[0], self.multi_head, x.shape[1], self.head_dim)
@@ -23,7 +22,7 @@ class attention(nn.Module):
         scores = F.softmax(Q @ K.transpose(-2, -1) / self.head_dim ** 0.5, dim = -1) 
         out = scores @ V
         # <B, N, L, E/N> -> (B, L, E)
-        out = out.view(x.shape[0], -1, self.embed_size)
+        out = out.transpose(1, 2).contiguous().view(x.shape[0], -1, self.embed_size)
         return self.W_O(out) 
     
 class masked_attention(attention): 
@@ -53,7 +52,7 @@ class cross_attention(attention):
         scores = F.softmax(Q @ K.transpose(-2, -1) / self.head_dim ** 0.5, dim = -1) 
         
         out = scores @ V
-        out = out.view(B, L1, E)
+        out = out.transpose(1, 2).view(B, L1, E)
         return self.W_O(out) 
     
 class transformer_layer(nn.Module): 
@@ -85,11 +84,12 @@ class Transformer(nn.Module):
     def position_encoding(self, x):     
         B, L, E = x.shape
         dim_index = torch.arange(0, E, 2).unsqueeze(0)
+        # exp^(-dim / E * log(10000) = exp^(log(10000)^ (-dim / E))) = 1 / 10000 ^ (dim / E)
         div_term = torch.exp(-dim_index / E * torch.log(10000))
         pos = torch.arange(0, L).unsqueeze(1) 
         pos_encode = torch.zeros(L, E, device=device)
-        pos_encode[:, 0::2] = torch.sin(position * div_term)
-        pos_encode[:, 1::2] = torch.cos(position * div_term)
+        pos_encode[:, 0::2] = torch.sin(pos * div_term)
+        pos_encode[:, 1::2] = torch.cos(pos * div_term)
         return x + pos_encode.unsqueeze(0)
     def forward(self, x): 
         x = self.embedding(x)
