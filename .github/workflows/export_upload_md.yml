@@ -21,10 +21,13 @@ jobs:
       - name: Install Dependencies
         run: cd notion2md && npm install
 
+      - name: Build TypeScript
+        run: cd notion2md && npx tsc
+
       - name: Run Export Script
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-        run: cd notion2md && npx ts-node src/export.ts
+        run: node notion2md/compile_output/export.js
 
       - name: Move Exported Files to cheat sheet
         run: |
