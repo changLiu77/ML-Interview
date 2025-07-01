@@ -27,7 +27,7 @@ jobs:
       - name: Run Export Script
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-        run: node notion2md/compile_output/export.js
+        run: cd notion2md && node compile_output/export.js
 
       - name: Move Exported Files to cheat sheet
         run: |
