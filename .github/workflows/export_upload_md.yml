@@ -1,0 +1,42 @@
+name: Export and Upload Notion Markdown
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  export-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: cd notion2md && npm install
+
+      - name: Run Export Script
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: cd notion2md && npx ts-node src/export.ts
+
+      - name: Move Exported Files to cheat sheet
+        run: |
+          mkdir -p "cheat sheet"
+          mkdir -p "cheat sheet/media"
+          cp -r notion2md/output/*.md "cheat sheet/"
+          cp -r notion2md/media/* "cheat sheet/media/"
+
+      - name: Commit and Push Exported Files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add "cheat sheet"
+          git commit -m "Auto update exported Notion markdown files" || echo "Nothing to commit"
+          git push
