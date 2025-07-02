@@ -71,31 +71,6 @@ Make use of the modal’s **reasoning **
 
     - Description: abundant info for next model 
 
-# Multi-Modality
-
-
-### VLM
-
-
-**LLaVA: image understanding + reasoning **
-
-- Image + text ⇒ reasoning 
-- Align image emb. to **LLaMA **
-- Train: two stage
-    - First: alignment: image ⇒ text of LLaMA: 
-        - only cosine similarity loss 
-        - Trained with images 
-
-    - Second: instruct generation: image + instruct ⇒ right answer 
-        - cross-entropy: text similarity 
-
-
-### Related Questions
-
-
-1. RLHF 
-1. infoNCE
-1. Different transformer structure
 # On-device ML
 
 
