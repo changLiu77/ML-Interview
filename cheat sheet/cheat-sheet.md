@@ -12,6 +12,9 @@
 
 
 
+# Index
+
+
 [Basic ML + DL](basic.md) 
 
 ## **ML**
@@ -25,12 +28,20 @@
 ## Transformer
 
 
-### Basic Structure
+- Basic Structure
+- Different transformers structures
+## Large Model Tricks 
 
 
-### Different transformers structures
+- MoE (Mixture of Expert)
+- Fine-tuning 
+    - Peft
+    - LoRA
+    - Adaptor
+    - Instruct tuning
+    - Prompt tuning
 
-
+- RAG 
 [LM Infrastructure](infrustructure.md) 
 
 [Deep Learning Rec Sys](recSys.md) 
