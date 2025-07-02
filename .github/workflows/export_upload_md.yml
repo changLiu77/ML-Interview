@@ -34,7 +34,7 @@ jobs:
           mkdir -p "cheat sheet"
           mkdir -p "cheat sheet/media"
           cp -r notion2md/output/*.md "cheat sheet/"
-          cp -r notion2md/media/* "cheat sheet/media/"
+          cp -r notion2md/output/media/* "cheat sheet/media/"
 
       - name: Commit and Push Exported Files
         run: |
