@@ -1,9 +1,9 @@
 
 
-## System design 
+# System design 
 
 
-### Intro: what, how, element, step?
+## Intro: what, how, element, step?
 
 
 ![Image](./media/image_22305834-30de-806f-b5ad-f8e9a535b6fd.png)
@@ -212,10 +212,11 @@ Step and what is done
 ![Image](./media/99f019ae7324c8132385cdc9530dd9e_22305834-30de-8018-b6c8-c986e0032382.jpg)
 
 
-### Common ML system 
+## Common ML system 
 
 
-**Rank system**
+### **Rank system**
+
 
 ![Image](./media/c84c934594a4c83b707593241a692ae_22305834-30de-807f-879d-c3f52a267b31.jpg)
 
@@ -313,7 +314,8 @@ ML method: represent learning / multi-modality learning / can be self-supervised
 
 
 - index: high performance search + fast **update of new data**
-**Detection System**
+### **Detection System**
+
 
 ![Image](./media/20f09a67d6b138d4ab236e0fee31948_22305834-30de-8085-b292-e43989e3d287.jpg)
 
@@ -328,10 +330,11 @@ ML method: represent learning / multi-modality learning / can be self-supervised
         - Go to next max box 
 
 
-### Common Evaluation Methods
+## Common Evaluation Methods
 
 
-**Offline matrices**
+### **Offline matrices**
+
 
 - MRR: mean reciprocal(互惠的) rank
 ```math
@@ -426,7 +429,8 @@ FPR=\frac{false => true}{all \; false}
     - Exact match: MRR: only the first one is needed
     - Loose match: nDCG: can measure the search quality and can evaluate **several return and items **
 
-**Online matrices**
+### **Online matrices**
+
 
 - CTR: click through rate 
     - clicked images / recommanded images
@@ -438,7 +442,7 @@ FPR=\frac{false => true}{all \; false}
 **Recommandation system, search engine, info retrieval **
 
 - Use nDCG
-### **Content Detection**
+## **Content Detection**
 
 
 - Problem setting:
@@ -490,10 +494,11 @@ FPR=\frac{false => true}{all \; false}
 ![Image](./media/1eaef08e9b15f642c8cfbdf77e8666f_22305834-30de-8069-839d-ed50c690b813.jpg)
 
 
-### **Recommandation System**
+## **Recommandation System**
 
 
-**Basic knowledge and classification of rs **
+### **Basic knowledge and classification of rs **
+
 
 ![Image](./media/d831417d6938de4dc233ce7411b6575_22305834-30de-80d4-8407-cf9d670109d7.jpg)
 
@@ -529,7 +534,8 @@ Typical Example
 - Video rec 
 - Image rec 
 - List rec 
-<u>**video rec**</u>
+### video rec
+
 
 - Most important: content > metadata / Most features are raw data, not many features to **select(so no need to use tree or some structure like this to determine which features are importatn)**
 - Strategy: both **content-based and Collaborative filtering based**
@@ -593,7 +599,8 @@ Typical Example
 
 
 
-List Rec
+### List Rec
+
 
 - Why embedding-based: 
     - do not have meta-data ⇒ only data in **short time window **
@@ -654,7 +661,8 @@ List Rec
 ![Image](./media/image_22305834-30de-801b-8942-d9c39874d3c6.png)
 
 
-**Other Recommandation system**
+### **Other Recommandation system**
+
 
 Moment recommendation
 
@@ -674,7 +682,8 @@ Moment recommendation
 
 
 - 
-**Learn to rank **
+### **Learn to rank **
+
 
 example: <u>**event-related**</u>, product-related (may also need list rec), <u>**ads recommandation**</u> 
 
@@ -755,13 +764,15 @@ example: <u>**event-related**</u>, product-related (may also need list rec), <u>
 
 
 
-**Pridiction Recommandation**
+### **Pridiction Recommandation**
+
 
 Music list rec
 
 - Based on the **time sequence of history** ⇒ The **order **of clicking may determine the “interst" 
 - A Pridiction problem 
-**People you may know recommandation**
+### **People you may know recommandation**
+
 
 - Features: need to know the **connection between each input / always need in social network **
 - Data need to use
@@ -794,16 +805,19 @@ Music list rec
     - Range: friends of friends ⇒ less computation 
     - pre-compute: to recommand in time ⇒ compute all rec for all users
 
-# Basic
+# Deep Learning Recommandation Sys Practice
+
+
+## Basic
 
 
 ![Image](./media/image_22305834-30de-806b-9392-e2ae141293fa.png)
 
 
-# System Related / Frame / Tool…
+## System Related / Frame / Tool…
 
 
-# Feature Processing
+## Feature Processing
 
 
 ## Intro
