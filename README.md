@@ -1,6 +1,6 @@
 # ML Interview Cheat Sheet
 
-A curated collection of:
+A collection of:
 
 - **Frequently Asked Code Snippets**  
   e.g. data loading, model training loops, evaluation metrics, important loss and modules.
