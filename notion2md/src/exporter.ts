@@ -127,7 +127,7 @@ async function main() {
     // get the page title
     const title = await getPageTitle(pageId); 
     const pageTitle = title.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
-    const outputFileDir = path.join(outputDir, `$README.md`);
+    const outputFileDir = path.join(outputDir, `README.md`);
     const exporter = new ConsoleExporter(outputFileDir, true);
     const n2m = new NotionConverter(notion)
     .withExporter(exporter)

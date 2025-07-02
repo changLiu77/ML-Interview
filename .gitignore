@@ -1,1 +1,3 @@
 notion2md/node_modules/*
+notion2md/output/*
+notion2md/.notion-to-md/*
