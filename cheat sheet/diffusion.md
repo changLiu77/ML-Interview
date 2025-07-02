@@ -58,7 +58,7 @@ Reference link: [https://medium.com/@onkarmishra/stable-diffusion-explained-1f10
 
 Structure
 
-![Image](./media/AD_4nXdeKmDMuoRTUMd1ARI3bgOLMyrV6lnBx6JcT1Md5ZJA39mLT8GcEr_0Q0W-7jEZiRRDAeMEp2_W_sIbZDK5OI2Th4q6kXiWcjvUkz7AHet9zWPwnKkerhMRhMlYXwNyPQRNmbbHT_lhQ8YAsDJrVjPJb4OD_22405834-30de-80c9-b721-f23d4e270b42)
+![Image](./media/image_22405834-30de-80b4-8b78-d1b795256410.png)
 
 
 - VAE: into **latent space**, i.e: a smaller or lower dimension space ⇒ input of UNet; decoder: from latent space back to origin;
@@ -86,7 +86,7 @@ Link: [DiT](https://www.wpeebles.com/DiT)
 ### Dream Booth
 
 
-![Image](./media/AD_4nXeOF5q0PqL55lJ6I43vjMXwGRMKTgvSzNdf3GYAOn_KRSq4Pdo6isT-btgMsvxg-4_tL-N781TCtKzJKyAuiAakKoSOv3qn-qHlzxTFhz9OIfENZD_bz_58GH04_PwKojR4nFfJFH22VRpguhEcaBI3Dnk_22405834-30de-80b4-af17-f67c8fa3e86c)
+![Image](./media/image_22405834-30de-80c9-9406-d851d5591a03.png)
 
 
 leverage between fine-tuned learned and original network generation ability
