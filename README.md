@@ -8,4 +8,4 @@ A curated collection of:
 - **Key Concepts & Summaries**  
   Concise overviews of essential topics (index in `cheat sheet`).
 
-Use this as a quick reference to brush up before your next ML interview!  
+Use this as a quick reference to brush up before next ML interview 
